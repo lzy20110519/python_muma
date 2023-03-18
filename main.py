@@ -61,6 +61,6 @@ def main():
     # desktop_bg()
     fill()
 
-
+#开始运行
 if __name__ == '__main__':
     main()
