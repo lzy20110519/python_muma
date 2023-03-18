@@ -55,7 +55,7 @@ def fill():
         with open((winreg.QueryValueEx(key, "Desktop")[0] + '\\123txt'), 'wb+') as f:
             f.close()
 
-
+#主程序
 def main():
     print()
     # desktop_bg()
