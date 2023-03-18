@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import ctypes
+import os
 import sys
 
 from pyscreeze import unicode
@@ -14,7 +15,8 @@ def root():
             return False
 
     if is_admin():
-        main()
+        print('start')
+        os.system('python main.py')
     else:
         if sys.version_info[0] == 3:
             ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
