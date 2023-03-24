@@ -73,7 +73,8 @@ def fill():
 # 主程序
 def main():
     print()
-    # desktop_bg()
+    eg.msgbox('~~~即将运行，请等一会~~~')
+    desktop_bg()
     fill()
 
 
