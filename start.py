@@ -25,7 +25,6 @@ def root():
         else:  # in python2.x
             ctypes.windll.shell32.ShellExecuteW(None, u"runas", unicode(sys.executable), unicode(__file__), None, 1)
 
-
 if __name__ == '__main__':
     print('执行中……')
     root()
