@@ -2,7 +2,7 @@ import os, sys
 import string
 import random
 import winreg
-
+import cv2
 import easygui as eg
 
 
@@ -68,7 +68,14 @@ def fill():
             print("这个是文件夹，文件夹名称：", file_address)
         else:
             print("这个情况没遇到")
+def run_images():
+    img = cv2.imread("./images/bg.jpg")
 
+    out_win = "output_style_full_screen"
+    cv2.namedWindow(out_win, cv2.WINDOW_NORMAL)
+    cv2.setWindowProperty(out_win, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+    cv2.imshow(out_win, img)
+    cv2.waitKey(0)
 
 # 主程序
 def main():
